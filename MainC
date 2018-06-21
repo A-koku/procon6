@@ -1,0 +1,20 @@
+import java.util.Scanner;
+ 
+public class Main {
+ 
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		long A = sc.nextLong();
+		long B = sc.nextLong();
+		long K = sc.nextLong();
+		System.out.print(sumKmulti(A,B,K));
+
+	}
+	//multiplu of K arrege
+	public static long sumKmulti(long A,long B, long K){
+		long a = (A >= 0 ? (A + K - 1) / K : A / K);
+		long b = (B >= 0 ? (B + K - 1) / K : B / K);
+		long ans = K * ((b - 1) * b / 2 - (a - 1) * a / 2);
+		return ans;
+	}
+}
